@@ -25,9 +25,10 @@ var Engine = (function(global) {
         ctx = canvas.getContext('2d'),
         lastTime;
 
-    canvas.width = 505;
+    canvas.width = 1010;
     canvas.height = 606;
     doc.body.appendChild(canvas);
+
 
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
@@ -45,8 +46,11 @@ var Engine = (function(global) {
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
          */
-        update(dt);
+        if(!app.pause){
+            update(dt);
+        }
         render();
+
 
         /* Set our lastTime variable which is used to determine the time delta
          * for the next time this function is called.
@@ -67,6 +71,8 @@ var Engine = (function(global) {
         reset();
         lastTime = Date.now();
         main();
+
+
     }
 
     /* This function is called by main (our game loop) and itself calls all
@@ -80,7 +86,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -91,10 +97,29 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
-        allEnemies.forEach(function(enemy) {
+        app.allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
-        player.update();
+        app.player.update();
+    }
+
+    function checkCollisions(){
+        app.allEnemies.forEach(function(enemy){
+            if(Math.abs(enemy.x-app.player.x)<60&&Math.abs(enemy.y-app.player.y)<60){
+                app.player.x = app.player.X_INIT;
+                app.player.y = app.player.Y_INIT;
+                app.heart = app.heart-1;
+                if(app.heart === -1){
+                    app.pause = true;
+                    $('#overModal').modal('show');
+                    app.onRestart();
+                    console.log("Restart");
+                }else{
+                    $('#hearts').text(app.heart+" Heart");
+                }
+            }
+        });
+
     }
 
     /* This function initially draws the "game level", it will then call
@@ -116,7 +141,7 @@ var Engine = (function(global) {
                 'images/grass-block.png'    // Row 2 of 2 of grass
             ],
             numRows = 6,
-            numCols = 5,
+            numCols = 10,
             row, col;
 
         /* Loop through the number of rows and columns we've defined above
@@ -147,11 +172,19 @@ var Engine = (function(global) {
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
-        allEnemies.forEach(function(enemy) {
+
+        app.allItems.forEach(function(item){
+            item.render();
+        });
+
+        app.allEnemies.forEach(function(enemy) {
             enemy.render();
         });
 
-        player.render();
+
+        app.player.render();
+
+
     }
 
     /* This function does nothing but it could have been a good place to
@@ -159,7 +192,7 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+        app.onStart();
     }
 
     /* Go ahead and load all of the images we know we're going to need to
@@ -171,7 +204,16 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/char-cat-girl.png',
+        'images/char-horn-girl.png',
+        'images/char-pink-girl.png',
+        'images/char-princess-girl.png',
+        'images/Gem Blue.png',
+        'images/Gem Green.png',
+        'images/Gem Orange.png',
+        'images/Heart.png',
+        'images/Rock.png'
     ]);
     Resources.onReady(init);
 

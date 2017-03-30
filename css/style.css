@@ -1,3 +1,37 @@
+
+.modal-body{
+    display:flex;
+}
+
+
+
+.character-name{
+    color: #1B5E20;
+    font-weight: bold;
+}
+
+
+header{
+    position: absolute;
+    width: 100%;
+}
+
+.data{
+    color:#FF5722;
+    width: 33%;
+}
+
 body {
     text-align: center;
+}
+
+.char-selected{
+    background-color: #8BC34A;
+}
+
+#game-win-img{
+    width: 100%;
+    height: 100%;
+    display : block;
+    margin : auto;
 }
