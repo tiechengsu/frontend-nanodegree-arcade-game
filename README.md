@@ -15,7 +15,7 @@ Characters:
 You will pick you character first.
 
 ![boy](images/char-boy.png)
-![cat-girl](images/char-cat-girl.png)
+![cat-girl](images/char-cat-girl.png "test")
 ![horn-girl](images/char-horn-girl.png)
 ![pink-girl](images/char-pink-girl.png)
 ![princess-girl](images/char-princess-girl.png)
@@ -30,9 +30,9 @@ Gem:
 -------------------
 You will try to collect Gems in order to get points
 
-![Gem Blue](images/Gem Blue.png)
-![Gem Green](images/Gem Green.png)
-![Gem Orange](images/Gem Orange.png)
+![Gem Blue](images/Gem\Blue.png)
+![Gem Green](images/Gem\Green.png)
+![Gem Orange](images/Gem\Orange.png)
 
 Heart:
 ------------------
