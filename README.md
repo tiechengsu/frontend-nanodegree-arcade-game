@@ -34,9 +34,9 @@ You will try to collect Gems in order to get points
 ![Gem Green](images/Gem-Green.png)
 ![Gem Orange](images/Gem-Orange.png)
 
--Blue Gem: 300 pts
--Green Gem: 200 pts
--Orange Gem: 100 pts
+- Blue Gem: 300 pts
+- Green Gem: 200 pts
+- Orange Gem: 100 pts
 
 
 Heart:
