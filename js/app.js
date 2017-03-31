@@ -217,15 +217,15 @@ Gem.prototype.getColor = function(){
     var flag = Math.floor(Math.random()*3);
     switch(flag){
         case 0:
-            this.sprite = 'images/Gem Orange.png';
+            this.sprite = 'images/Gem-Orange.png';
             this.points = 100;
             break;
         case 1:
-            this.sprite = 'images/Gem Green.png';
+            this.sprite = 'images/Gem-Green.png';
             this.points = 200;
             break;
         case 2:
-            this.sprite = 'images/Gem Blue.png';
+            this.sprite = 'images/Gem-Blue.png';
             this.points = 300;
             break;
     }
