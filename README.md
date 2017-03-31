@@ -1,6 +1,50 @@
-frontend-nanodegree-arcade-game
+arcade game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+##How to run:
+- Download of fork the application
+- You can also find it on [here](https://tiechengsu.github.io/frontend-nanodegree-arcade-game/)
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+##How to use:
+In this game you have a Player and Enemies(Bugs). The goal of the player is to reach the water, without colliding into any one of the enemies. Every time the player reach the water, the level will be up by one and you will win the game when you reach level 20. The player can move left, right, up and down.
+
+###Characters:
+-----------------
+You will pick you character first.
+![boy](images/char-boy.png)
+![cat-girl](images/char-cat-girl.png)
+![horn-girl](images/char-horn-girl.png)
+![pink-girl](images/char-pink-girl.png)
+![princess-girl](images/char-princess-gril.png)
+###Enemy:
+-----------------
+Try to avoid the bug
+![bug](images/enemy-bug.png)
+###Gem:
+------------------
+You will try to collect Gems in order to get points
+![Gem Blue](images/Gem Blue.png)
+![Gem Green](images/Gem Green.png)
+![Gem Orange](images/Gem Orange.png)
+###Heart:
+-------------------
+You will have three lifes at the very beginning, collect the heart to increase your lifes
+![Heart](images/Heart.png)
+###Rock:
+--------------------
+The rock will block your way
+![Rock](images/Rock.png)
+
+###Addional rules:
+-----------------------
+Use space to pause the game
+
+####Screenshot
+--------------------
+![interface](images/interface.png)
+
+
+
+
+
+
